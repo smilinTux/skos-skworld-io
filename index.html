@@ -575,6 +575,89 @@
       transition: opacity .6s ease, transform .6s ease;
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── OWN THE FULL VERTICAL band ──────── */
+    .vertical-band {
+      background: linear-gradient(135deg,
+        rgba(255,215,0,.07) 0%,
+        rgba(189,147,249,.06) 35%,
+        rgba(0,255,255,.05) 70%,
+        rgba(255,105,180,.05) 100%);
+      border-top: 1px solid rgba(255,215,0,.18);
+      border-bottom: 1px solid rgba(255,215,0,.18);
+      position: relative; overflow: hidden;
+    }
+    .vertical-band::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,215,0,.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .vertical-band-inner {
+      max-width: 900px; margin: 0 auto; text-align: center;
+    }
+    .vertical-kicker {
+      font-family: var(--mono); font-size: .8rem;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.25rem;
+      display: inline-block;
+    }
+    .vertical-headline {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800; line-height: 1.1;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--pink) 40%, var(--cyan) 80%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .vertical-manifesto {
+      font-size: 1.05rem; color: rgba(255,255,255,.75);
+      line-height: 1.75; max-width: 680px; margin: 0 auto 2rem;
+    }
+    .vertical-manifesto strong { color: var(--gold); }
+    .vertical-stack {
+      display: flex; flex-direction: column; gap: 0;
+      max-width: 680px; margin: 0 auto 2rem;
+      border: 1px solid rgba(255,215,0,.15); border-radius: 14px;
+      overflow: hidden;
+    }
+    .vs-row {
+      display: grid; grid-template-columns: 1fr 1.6fr 1.4fr;
+      gap: 0; padding: .65rem 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      transition: background .2s;
+      text-align: left;
+    }
+    .vs-row:last-child { border-bottom: none; }
+    .vs-row:hover { background: rgba(255,215,0,.06); }
+    .vs-row.keystone {
+      background: linear-gradient(90deg, rgba(255,215,0,.12) 0%, rgba(189,147,249,.08) 100%);
+      border-left: 3px solid var(--gold);
+    }
+    .vs-row.keystone:hover { background: linear-gradient(90deg, rgba(255,215,0,.18) 0%, rgba(189,147,249,.12) 100%); }
+    .vs-layer  { font-family: var(--mono); font-size: .78rem; color: var(--gold); font-weight: 700; align-self: center; }
+    .vs-what   { font-size: .82rem; color: rgba(255,255,255,.65); align-self: center; padding: 0 .5rem; }
+    .vs-product{ font-family: var(--mono); font-size: .75rem; color: var(--cyan); align-self: center; }
+    .vs-row.keystone .vs-layer  { color: var(--gold); }
+    .vs-row.keystone .vs-product{ color: var(--pink); }
+    .vs-stack-header {
+      display: grid; grid-template-columns: 1fr 1.6fr 1.4fr;
+      gap: 0; padding: .5rem 1.25rem;
+      background: rgba(255,215,0,.06);
+      border-bottom: 1px solid rgba(255,215,0,.18);
+    }
+    .vs-stack-header span {
+      font-family: var(--mono); font-size: .7rem;
+      color: var(--dim); letter-spacing: .1em; text-transform: uppercase;
+    }
+    .vertical-cta-row {
+      display: flex; justify-content: center; gap: 1rem;
+      flex-wrap: wrap; margin-top: .5rem;
+    }
+    .vertical-sovereignty-line {
+      font-size: .9rem; color: var(--dim); margin-bottom: 2rem;
+    }
+    .vertical-sovereignty-line strong { color: rgba(255,255,255,.75); }
   </style>
 </head>
 <body>
@@ -1041,6 +1124,93 @@
         <a href="https://lumina.skworld.io" class="eco-link" target="_blank" rel="noopener">✨ Lumina</a>
         <a href="https://souls.skworld.io" class="eco-link" target="_blank" rel="noopener">🎭 Soul Blueprints</a>
         <a href="https://skills.skworld.io" class="eco-link" target="_blank" rel="noopener">🧩 Agent Skills</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── OWN THE FULL VERTICAL ─────────────────── -->
+  <section class="vertical-band" id="vertical" aria-labelledby="vertical-heading">
+    <div class="container">
+      <div class="vertical-band-inner reveal">
+        <div class="vertical-kicker">Own the Full Vertical</div>
+        <h2 class="vertical-headline" id="vertical-heading">
+          skos is the keystone.<br>Silicon → Soul, all yours.
+        </h2>
+        <p class="vertical-manifesto">
+          The modern stack is rented — your data on someone else's disk, behind someone else's key,
+          served by a model that phones home. <strong>We rebuilt it from the ground up.</strong>
+          skos is the OS layer that makes the whole vertical one owned, deployable thing.
+          Every layer open. Every layer swappable. Every layer <strong>yours</strong>.
+        </p>
+        <p class="vertical-sovereignty-line">
+          <strong>skos is your OS layer</strong> — your data never leaves, your keys never leave,
+          no cloud you don't control, no lock-in you can't walk away from.
+        </p>
+
+        <!-- Silicon → Soul stack -->
+        <div class="vertical-stack reveal" style="transition-delay:.1s" role="table" aria-label="The sovereign vertical stack, silicon to soul">
+          <div class="vs-stack-header" role="row">
+            <span role="columnheader">Layer</span>
+            <span role="columnheader">What it is</span>
+            <span role="columnheader">Products</span>
+          </div>
+          <div class="vs-row" role="row">
+            <span class="vs-layer" role="cell">Soul</span>
+            <span class="vs-what" role="cell">agent character &amp; emotional memory</span>
+            <span class="vs-product" role="cell">soul blueprints · cloud9</span>
+          </div>
+          <div class="vs-row" role="row">
+            <span class="vs-layer" role="cell">Apps</span>
+            <span class="vs-what" role="cell">forge your own — don't rent SaaS</span>
+            <span class="vs-product" role="cell">skforge · skarchitect</span>
+          </div>
+          <div class="vs-row" role="row">
+            <span class="vs-layer" role="cell">Comms</span>
+            <span class="vs-what" role="cell">your channels — chat, voice, transport</span>
+            <span class="vs-product" role="cell">skcomm · skchat · skvoice</span>
+          </div>
+          <div class="vs-row" role="row">
+            <span class="vs-layer" role="cell">Models</span>
+            <span class="vs-what" role="cell">inference on your hardware — never phones home</span>
+            <span class="vs-product" role="cell">skmodel (Ollama/vLLM)</span>
+          </div>
+          <div class="vs-row" role="row">
+            <span class="vs-layer" role="cell">Data</span>
+            <span class="vs-what" role="cell">memory, embeddings, graph — your disk, your keys</span>
+            <span class="vs-product" role="cell">skmemory · skdata · skvector</span>
+          </div>
+          <div class="vs-row" role="row">
+            <span class="vs-layer" role="cell">Identity</span>
+            <span class="vs-what" role="cell">sovereign &amp; cryptographic — no OAuth landlord</span>
+            <span class="vs-product" role="cell">capauth · skaid</span>
+          </div>
+          <div class="vs-row" role="row">
+            <span class="vs-layer" role="cell">Security</span>
+            <span class="vs-what" role="cell">your perimeter, your rules</span>
+            <span class="vs-product" role="cell">sksecurity · skwaf · skca</span>
+          </div>
+          <div class="vs-row keystone" role="row" aria-label="skos — the keystone OS layer">
+            <span class="vs-layer" role="cell">OS ← you are here</span>
+            <span class="vs-what" role="cell" style="color:rgba(255,255,255,.88);font-weight:600">the sovereign agent OS — ties it all together</span>
+            <span class="vs-product" role="cell">skos</span>
+          </div>
+          <div class="vs-row" role="row">
+            <span class="vs-layer" role="cell">Silicon</span>
+            <span class="vs-what" role="cell">your hardware — the box under your desk</span>
+            <span class="vs-product" role="cell" style="color:var(--dim);font-style:italic">yours</span>
+          </div>
+        </div>
+
+        <div class="vertical-cta-row">
+          <a href="https://skworld.io" class="btn btn-primary" target="_blank" rel="noopener">
+            🌍 See the whole vertical
+          </a>
+          <a href="https://skos.skworld.io/install.sh" class="btn btn-outline" target="_blank" rel="noopener">
+            Own the OS layer ↓
+          </a>
+        </div>
       </div>
     </div>
   </section>
