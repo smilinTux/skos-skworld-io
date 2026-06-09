@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — No adapter found · skos</title>
+  <meta name="description" content="This route has no adapter. The page you're looking for doesn't exist. Head back to skos — The Sovereign Agent OS.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://skos.skworld.io/404.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="404 — No adapter found · skos">
+  <meta property="og:description" content="This route has no adapter. Head back to skos — The Sovereign Agent OS.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://skos.skworld.io/404.html">
+  <meta property="og:site_name" content="skos · SKWorld">
+  <meta property="og:image" content="https://skos.skworld.io/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="skos — 404, No adapter found">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@smilinTux">
+  <meta name="twitter:title" content="404 — No adapter found · skos">
+  <meta name="twitter:image" content="https://skos.skworld.io/og.png">
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#0a0a1a">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐧</text></svg>">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --gold:   #FFD700;
+      --pink:   #FF69B4;
+      --cyan:   #00FFFF;
+      --green:  #50fa7b;
+      --purple: #bd93f9;
+      --bg:     #0a0a0f;
+      --bg2:    #0f1020;
+      --card:   rgba(15, 16, 40, 0.7);
+      --border: rgba(255,215,0,0.15);
+      --text:   rgba(255,255,255,0.88);
+      --dim:    rgba(255,255,255,0.55);
+      --mono:   'JetBrains Mono', 'Fira Code', monospace;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Starfield background ─────────────── */
+    .starfield {
+      position: fixed; inset: 0; z-index: -1;
+      background: radial-gradient(ellipse at 50% -10%, #1a1a3e 0%, #0d0d1f 40%, #0a0a0f 100%);
+    }
+    .stars {
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(2px 2px at 20px 30px,  rgba(255,215,0,0.9),  transparent),
+        radial-gradient(2px 2px at 40px 70px,  rgba(0,255,255,0.7),  transparent),
+        radial-gradient(1px 1px at 90px 40px,  rgba(255,255,255,0.9),transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(255,105,180,0.8),transparent),
+        radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.6),transparent),
+        radial-gradient(1px 1px at 70px 55px,  rgba(189,147,249,0.7),transparent);
+      background-repeat: repeat;
+      background-size: 200px 100px;
+      animation: starscroll 100s linear infinite;
+    }
+    .stars:nth-child(2) { background-size: 270px 130px; animation-duration: 145s; animation-direction: reverse; opacity: .7; }
+    .stars:nth-child(3) { background-size: 340px 165px; animation-duration: 190s; opacity: .45; }
+    @keyframes starscroll {
+      from { transform: translateX(0)      translateY(0); }
+      to   { transform: translateX(-200px) translateY(-100px); }
+    }
+
+    /* ── Floating deco ────────────────────── */
+    .float-deco {
+      position: fixed; font-size: 1.6rem; z-index: 0; pointer-events: none;
+      animation: floatDeco 18s infinite ease-in-out;
+      opacity: .25;
+    }
+    @keyframes floatDeco {
+      0%,100% { transform: translateY(0) rotate(-4deg); opacity: .2; }
+      33%  { transform: translateY(-28px) rotate(6deg); opacity: .5; }
+      66%  { transform: translateY(-48px) rotate(-2deg); opacity: .35; }
+    }
+
+    /* ── Layout ───────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+
+    /* ── Sticky nav ───────────────────────── */
+    .site-nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(10, 10, 20, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,215,0,0.12);
+    }
+    .nav-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      max-width: 1200px; margin: 0 auto; padding: .75rem 2rem;
+    }
+    .nav-logo {
+      font-family: var(--mono); font-weight: 700; font-size: 1.25rem;
+      color: var(--gold); text-decoration: none; letter-spacing: -.5px;
+    }
+    .nav-logo span { color: var(--cyan); }
+    .nav-links { display: flex; list-style: none; gap: 1.4rem; align-items: center; }
+    .nav-links a {
+      color: var(--dim); text-decoration: none; font-size: .875rem;
+      font-weight: 500; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--gold), var(--pink));
+      color: #000 !important; padding: .45rem 1.2rem; border-radius: 6px;
+      font-weight: 700 !important; font-size: .85rem !important;
+    }
+    .nav-cta:hover { opacity: .85; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* ── 404 hero ─────────────────────────── */
+    .hero-404 {
+      flex: 1;
+      display: flex; align-items: center; justify-content: center;
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+    .hero-404::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 60%, rgba(189,147,249,.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .err-code {
+      font-family: var(--mono);
+      font-size: clamp(5rem, 15vw, 10rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -4px;
+      background: linear-gradient(140deg, var(--gold) 0%, var(--pink) 45%, var(--cyan) 80%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: .25rem;
+    }
+
+    .err-penguin {
+      font-size: clamp(3rem, 8vw, 5rem);
+      margin-bottom: 1.25rem;
+      display: block;
+      animation: floatPenguin 4s ease-in-out infinite;
+    }
+    @keyframes floatPenguin {
+      0%,100% { transform: translateY(0) rotate(-3deg); }
+      50%      { transform: translateY(-16px) rotate(3deg); }
+    }
+
+    .err-headline {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      margin-bottom: .75rem;
+      color: #fff;
+    }
+
+    .err-sub {
+      font-family: var(--mono);
+      font-size: clamp(.85rem, 1.5vw, 1rem);
+      color: var(--cyan);
+      margin-bottom: .5rem;
+      letter-spacing: .05em;
+    }
+
+    .err-body {
+      font-size: 1rem;
+      color: var(--dim);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .err-card {
+      background: var(--card);
+      border: 1.5px solid rgba(255,215,0,.18);
+      border-radius: 14px;
+      padding: 1.5rem 2rem;
+      max-width: 440px;
+      margin: 0 auto 2.5rem;
+      font-family: var(--mono);
+      font-size: .82rem;
+      line-height: 2;
+      text-align: left;
+      backdrop-filter: blur(12px);
+    }
+    .err-card .label { color: var(--dim); }
+    .err-card .val-red { color: var(--pink); }
+    .err-card .val-ok  { color: var(--green); }
+    .err-card .val-gold { color: var(--gold); }
+
+    .btn-row {
+      display: flex; justify-content: center; gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: .45rem;
+      padding: .75rem 1.6rem; border-radius: 10px;
+      font-weight: 600; font-size: .95rem; text-decoration: none;
+      transition: all .25s; position: relative; overflow: hidden;
+      border: none; cursor: pointer;
+    }
+    .btn::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.15), transparent);
+      transform: translateX(-100%); transition: transform .5s;
+    }
+    .btn:hover::after { transform: translateX(100%); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--pink) 60%);
+      color: #000;
+      box-shadow: 0 4px 20px rgba(255,215,0,.3);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,215,0,.5); }
+    .btn-outline {
+      background: rgba(255,255,255,.04);
+      border: 1.5px solid rgba(255,215,0,.3);
+      color: rgba(255,255,255,.85);
+    }
+    .btn-outline:hover { border-color: var(--gold); background: rgba(255,215,0,.07); transform: translateY(-2px); }
+
+    /* ── Footer ───────────────────────────── */
+    .site-footer {
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(255,215,0,.12);
+      background: rgba(0,0,0,.4);
+      position: relative; z-index: 1;
+    }
+    .footer-inner {
+      display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+    }
+    .footer-links {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 1rem 1.5rem;
+    }
+    .footer-links a {
+      color: var(--dim); text-decoration: none; font-size: .875rem;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy {
+      font-family: var(--mono); font-size: .8rem;
+      color: rgba(255,255,255,.3); text-align: center;
+    }
+    .footer-copy span { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <!-- Starfield -->
+  <div class="starfield" aria-hidden="true">
+    <div class="stars"></div>
+    <div class="stars"></div>
+    <div class="stars"></div>
+  </div>
+
+  <!-- Floating decorations -->
+  <div class="float-deco" style="top:25%;left:5%;animation-delay:0s">🔍</div>
+  <div class="float-deco" style="top:55%;right:6%;animation-delay:5s">⚡</div>
+
+  <!-- ── NAV ─────────────────────────────────── -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="https://skos.skworld.io/" class="nav-logo">🐧 <span>sk</span>os</a>
+      <ul class="nav-links">
+        <li><a href="https://skos.skworld.io/#what-it-is">What it is</a></li>
+        <li><a href="https://skos.skworld.io/#capabilities">Capabilities</a></li>
+        <li><a href="https://skos.skworld.io/#deploy">Deploy</a></li>
+        <li><a href="https://skos.skworld.io/docs/">Docs</a></li>
+        <li><a href="https://skworld.io">SKWorld</a></li>
+        <li><a href="https://github.com/smilinTux/skos" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://skos.skworld.io/install.sh" class="nav-cta">Install ↓</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── 404 CONTENT ─────────────────────────── -->
+  <main class="hero-404" role="main">
+    <div>
+      <span class="err-penguin" aria-hidden="true">🐧</span>
+
+      <div class="err-code" aria-label="Error 404">404</div>
+
+      <h1 class="err-headline">This route has no adapter.</h1>
+
+      <p class="err-sub">skos: port lookup failed · path not registered</p>
+
+      <p class="err-body">
+        The page you're looking for doesn't exist —
+        or it may have moved. Check the URL, or head back home.
+      </p>
+
+      <!-- Diagnostic card (on-brand terminal feel) -->
+      <div class="err-card" role="status" aria-label="Error diagnostic">
+        <div><span class="label">status  </span>  <span class="val-red">404 Not Found</span></div>
+        <div><span class="label">path    </span>  <span class="val-red">no adapter registered</span></div>
+        <div><span class="label">skfence </span>  <span class="val-ok">operational ✓</span></div>
+        <div><span class="label">remedy  </span>  <span class="val-gold">return to /  or  /docs/</span></div>
+      </div>
+
+      <div class="btn-row">
+        <a href="https://skos.skworld.io/" class="btn btn-primary">
+          🐧 Back to home
+        </a>
+        <a href="https://skos.skworld.io/docs/" class="btn btn-outline">
+          📖 Docs
+        </a>
+        <a href="https://skos.skworld.io/install.sh" class="btn btn-outline" target="_blank" rel="noopener">
+          ↓ Install skos
+        </a>
+      </div>
+
+      <p style="margin-top:2.5rem;font-family:var(--mono);font-size:.82rem;color:rgba(255,215,0,.5)">
+        "staycuriousANDkeepsmilin" 🐧
+      </p>
+    </div>
+  </main>
+
+  <!-- ── FOOTER ──────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-links" role="list" aria-label="Ecosystem links">
+          <a href="https://skworld.io" role="listitem">🌍 SKWorld</a>
+          <a href="https://sksecurity.io" role="listitem">🛡️ SKSecurity</a>
+          <a href="https://capauth.io" role="listitem">🔐 CapAuth</a>
+          <a href="https://skmemory.io" role="listitem">🧠 SKMemory</a>
+          <a href="https://skcomm.io" role="listitem">💬 SKComm</a>
+          <a href="https://skforge.io" role="listitem">⚒️ SKForge</a>
+          <a href="https://github.com/smilinTux/skos" role="listitem">📦 GitHub</a>
+          <a href="https://lumina.skworld.io" role="listitem">✨ Lumina</a>
+          <a href="https://smilintux.org" role="listitem">🐧 smilinTux</a>
+        </div>
+        <div class="footer-copy">
+          &copy; 2026 SKWorld · Sovereign Technology for Creators ·
+          <span>staycuriousANDkeepsmilin</span> ·
+          GPL-3.0 · <a href="https://github.com/smilinTux" style="color:var(--dim)">smilinTux</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
