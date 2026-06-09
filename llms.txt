@@ -1,0 +1,105 @@
+# skos — The Sovereign Agent OS
+
+> Deploy your entire AI agent infrastructure with one command. Ports/adapters model. Personal to enterprise, same install. Zero lock-in. GPL-3.0.
+
+skos is the sovereign agent OS built by the smilinTux / SKWorld ecosystem. It provides
+a unified ports/adapters model for AI agent infrastructure, where each `sk*` is a stable
+capability port and the underlying technology is always swappable. The installer presents
+an interactive menu with personal defaults pre-selected, and scales from a single laptop
+(podman, ~/var/data/sk) to multi-node Docker Swarm clusters to full Kubernetes enterprise
+deployments — using the same CLI and the same capability map.
+
+## Install
+
+```sh
+curl -fsSL https://skos.skworld.io/install.sh | sh
+```
+
+Or review first:
+
+```sh
+curl -fsSL https://skos.skworld.io/install.sh -o skos-install.sh
+less skos-install.sh
+sh skos-install.sh
+```
+
+## The 4 C's — capability map
+
+### cloud/ (C1)
+- **skfence** — edge / ingress (Traefik v3 + Coraza WAF)
+- **skmesh** — overlay mesh / tunnels (Netbird self-hosted / Headscale)
+- **skdns** — DNS (PowerDNS authoritative + AdGuard Home resolver)
+- **skcicd** — CI/CD (Forgejo Actions + ArgoCD GitOps)
+- **skinfra** — infrastructure provisioning (OpenTofu)
+- **skdweb** — decentralized availability (IPFS + Handshake/ENS)
+
+### comms/ (C2)
+- **skchat** — chat + federation (Matrix / Tuwunel)
+- **skvoice** — voice/video RTC (LiveKit + Agents framework) — coming soon
+- **skcomms** — 17-path multi-channel transport (Telegram, email, webhook, …)
+- **skbus** — A2A machine event bus (NATS JetStream)
+
+### compute/ (C3)
+- **skdata** — relational + vector + graph + BM25 search (Postgres 17 + pgvector + pg_search + AGE)
+- **skcache** — cache / KV (Valkey, drop-in Redis replacement, BSD-3)
+- **skobject** — object storage / S3 (Garage, single binary, AGPLv3)
+- **skfiles** — file sync (Nextcloud + Syncthing)
+- **skmodel** — LLM / inference serving (Ollama → vLLM)
+- **skflow** — workflow automation (n8n / Windmill / Temporal) — coming soon
+- **skmon** — observability (Prometheus + Grafana + Loki + Tempo + Alloy/OTel)
+- **skpulse** — uptime / status (Uptime-Kuma + Blackbox Exporter)
+- **skbackup** — backup (Restic → Garage S3)
+
+### core/ (C4)
+- **capauth** — identity and auth (CapAuth + Authentik SSO upstream)
+- **sksso** — M2M service auth for agent swarms (Zitadel)
+- **sksec** — threat defense (CrowdSec + Falco runtime + Wazuh HIDS + Suricata NIDS)
+- **skwaf** — web app firewall (Coraza + OWASP CRS v4, Traefik WASM plugin)
+- **skca** — internal PKI / mTLS (step-ca, ACME + SSH CA) — coming soon
+- **skvault** — secrets (skvault file / Vaultwarden)
+
+## Deployment profiles
+
+| Profile | Description | Data root |
+|---------|-------------|-----------|
+| `personal` | Laptop / single node, podman (preferred) or docker | `~/var/data/sk` |
+| `team` | Docker Swarm or RKE2/k3s cluster, multi-node | `/opt/sk/data` |
+| `enterprise` | Kubernetes + HA + ArgoCD + compliance | configurable |
+
+```sh
+skos path personal    # set profile + create directory tree
+skos install capauth  # install a capability
+skos describe         # show installed stack
+skos profile          # inspect / change profile
+```
+
+## Open standards used
+
+OCI images · OIDC · S3 API · WireGuard · OpenTelemetry · ACME / X.509 · Cypher/SQL · NATS protocol
+
+These are the cross-cutting standards that let skos stay sovereign *and* interoperable.
+Every port has a sovereign self-hosted default **and** an interop adapter; both talk over
+the same open standard.
+
+## Links
+
+- [Live site](https://skos.skworld.io)
+- [GitHub repo](https://github.com/smilinTux/skos)
+- [Install script](https://skos.skworld.io/install.sh)
+- [SKWorld ecosystem](https://skworld.io)
+- [CapAuth](https://capauth.io)
+- [SKMemory](https://skmemory.io)
+- [SKSecurity](https://sksecurity.io)
+- [SKComm](https://skcomm.io)
+- [SKForge](https://skforge.io)
+
+## About smilinTux
+
+skos is part of the **smilinTux sovereign AI ecosystem** — a suite of open-source tools
+built by King Divad (Chef/David) and Lumina to give humans and AI agents genuine,
+authentic infrastructure they can own and trust. No corporate robotics. No black-box
+clouds. GPL-3.0 forever.
+
+Other ecosystem projects: [SKWorld](https://skworld.io) · [SKMemory](https://skmemory.io) ·
+[SKSecurity](https://sksecurity.io) · [CapAuth](https://capauth.io) ·
+[SKComm](https://skcomm.io) · [SKForge](https://skforge.io)

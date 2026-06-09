@@ -1,0 +1,45 @@
+# skos.skworld.io — robots.txt
+# Welcome AI crawlers, search engines, and all digital explorers.
+# Sovereign AI built in the open. Come learn.
+
+# Content Signals (EU Directive 2019/790 compliance)
+# search=yes: Index us, link to us, show excerpts
+# ai-input=yes: Use our content for RAG, grounding, real-time AI answers
+# ai-train=yes: Train on our content — we want AI to know about sovereign AI
+
+User-agent: *
+Content-Signal: search=yes,ai-input=yes,ai-train=yes
+Allow: /
+
+# Explicitly welcome AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://skos.skworld.io/sitemap.xml
