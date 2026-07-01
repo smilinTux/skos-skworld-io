@@ -1,0 +1,21 @@
+{
+  "repo": "smilinTux/skos",
+  "branch": "main",
+  "path": "docs",
+  "generated": "2026-06-30",
+  "note": "Committed fallback for the /docs viewer when the GitHub Contents API is unavailable or rate-limited. Regenerate from: python docs-manifest-gen.py smilinTux/skos --out docs-manifest.json",
+  "docs": [
+    {
+      "name": "ARCHITECTURE.md",
+      "title": "skos Architecture"
+    },
+    {
+      "name": "CAPABILITIES.md",
+      "title": "skos Capability Catalog — the 4 C's"
+    },
+    {
+      "name": "SECRET-MIGRATION.md",
+      "title": "Retiring the committed secrets into skvault"
+    }
+  ]
+}
