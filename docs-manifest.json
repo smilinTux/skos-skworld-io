@@ -2,7 +2,7 @@
   "repo": "smilinTux/skos",
   "branch": "main",
   "path": "docs",
-  "generated": "2026-06-30",
+  "generated": "2026-07-13",
   "note": "Committed fallback for the /docs viewer when the GitHub Contents API is unavailable or rate-limited. Regenerate from: python docs-manifest-gen.py smilinTux/skos --out docs-manifest.json",
   "docs": [
     {
@@ -14,8 +14,36 @@
       "title": "skos Capability Catalog — the 4 C's"
     },
     {
+      "name": "CLAUDE-CODE-GTD-CONVENTION.md",
+      "title": "SKOS GTD: the Claude-Code operating convention"
+    },
+    {
       "name": "SECRET-MIGRATION.md",
       "title": "Retiring the committed secrets into skvault"
+    },
+    {
+      "name": "gtd-ingest-SOP.md",
+      "title": "gtd-ingest: Standard Operating Procedures"
+    },
+    {
+      "name": "gtd-ingest-architecture.md",
+      "title": "skos GTD-Ingest: Unified GTD as a Port, Every Source an Adapter"
+    },
+    {
+      "name": "gtd-ingest-order-tracking-design.md",
+      "title": "skos gtd-ingest: Stateful Order/Shipment Tracking + the upsert primitive"
+    },
+    {
+      "name": "model-registry.md",
+      "title": "skos Model Registry: single source of truth for model selection"
+    },
+    {
+      "name": "skos-autopilot-SOP.md",
+      "title": "SKOS Autopilot - Standard Operating Procedure"
+    },
+    {
+      "name": "skos-autopilot-architecture.md",
+      "title": "SKOS Autopilot: Autonomous Assess / Plan / Swarm / Grade / Report over the GTD Spine"
     }
   ]
 }
