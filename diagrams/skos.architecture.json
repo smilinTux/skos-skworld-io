@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "skos Component Map",
+    "subtitle": "Ports and adapters: declare what you want, skos resolves how, per profile",
+    "output": "skos.architecture.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "app_yaml",
+      "type": "frontend",
+      "label": "app.yaml descriptor",
+      "sublabel": "declares capabilities needed",
+      "pos": [120, 80],
+      "size": [220, 72]
+    },
+    {
+      "id": "resolver",
+      "type": "backend",
+      "label": "Resolver",
+      "sublabel": "capability to adapter, per profile",
+      "pos": [120, 260],
+      "size": [220, 72]
+    },
+    {
+      "id": "catalog",
+      "type": "backend",
+      "label": "Capability catalog",
+      "sublabel": "4-C ports: cloud, comms, compute, core",
+      "pos": [460, 260],
+      "size": [230, 72]
+    },
+    {
+      "id": "renderer",
+      "type": "backend",
+      "label": "Renderer",
+      "sublabel": "descriptor to platform manifest",
+      "pos": [120, 440],
+      "size": [220, 72]
+    },
+    {
+      "id": "data_root",
+      "type": "database",
+      "label": "$SK_DATA_ROOT",
+      "sublabel": "data-root tree, per profile",
+      "pos": [460, 440],
+      "size": [220, 72]
+    },
+    {
+      "id": "brain",
+      "type": "database",
+      "label": "Brain",
+      "sublabel": "EntityNode knowledge ontology",
+      "pos": [460, 620],
+      "size": [220, 72]
+    },
+    {
+      "id": "surfaces",
+      "type": "external",
+      "label": "Surfaces",
+      "sublabel": "obsidian, claude-code, codex, n8n",
+      "pos": [800, 620],
+      "size": [230, 72]
+    },
+    {
+      "id": "deployed",
+      "type": "external",
+      "label": "Deployed service",
+      "sublabel": "compose, k8s, or nomad target",
+      "pos": [120, 780],
+      "size": [220, 72]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "skos (ports and adapters foundation)",
+      "wraps": ["resolver", "catalog", "renderer", "data_root", "brain"]
+    }
+  ],
+  "connections": [
+    {
+      "id": "app-to-resolver",
+      "from": "app_yaml",
+      "to": "resolver",
+      "label": "declares capabilities",
+      "variant": "default"
+    },
+    {
+      "id": "resolver-to-catalog",
+      "from": "resolver",
+      "to": "catalog",
+      "label": "looks up adapter",
+      "variant": "default"
+    },
+    {
+      "id": "resolver-to-renderer",
+      "from": "resolver",
+      "to": "renderer",
+      "label": "resolved plan",
+      "variant": "emphasis"
+    },
+    {
+      "id": "renderer-to-deployed",
+      "from": "renderer",
+      "to": "deployed",
+      "label": "emits manifest",
+      "variant": "emphasis"
+    },
+    {
+      "id": "resolver-to-dataroot",
+      "from": "resolver",
+      "to": "data_root",
+      "label": "records capabilities",
+      "variant": "dashed"
+    },
+    {
+      "id": "dataroot-to-brain",
+      "from": "data_root",
+      "to": "brain",
+      "label": "EntityNode files",
+      "variant": "dashed"
+    },
+    {
+      "id": "brain-to-surfaces",
+      "from": "brain",
+      "to": "surfaces",
+      "label": "exposes entities",
+      "variant": "default"
+    }
+  ]
+}
